@@ -10,3 +10,4 @@ bower_components/
 # temp and public folders (public will contain the build, like minified files etc)
 public/
 temp/
+dist/

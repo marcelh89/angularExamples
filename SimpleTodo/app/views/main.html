@@ -21,7 +21,7 @@
       <span class="glyphicon glyphicon-remove pull-right" ng-click="removeItem(todo)"></span>
     </div>
     <div ng-if="todo.edit">
-      <form onsubmit="editSave(todo)">
+      <form ng-submit="editItem(todo)">
         <input type="text" ng-if="todo.edit" ng-dblclick="editItem(todo)" ng-model="todo.label" />
         <span class="glyphicon glyphicon glyphicon-ok pull-right" ng-click="editItem(todo)"></span>
       </form>
