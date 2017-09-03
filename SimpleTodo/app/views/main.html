@@ -1,0 +1,30 @@
+<h1 align="center"> SimpleTodo </h1>
+
+
+<form class="row" ng-submit="addItem()">
+  <div class="col-lg-12">
+    <div class="input-group">
+
+      <input type="text" class="form-control" placeholder="Was ist zu tun?" ng-model="newTodo">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" ng-click="addItem()">Erstellen</button>
+      </span>
+    </div>
+  </div>
+</form>
+
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="todo in todoList">
+    <div ng-if="!todo.edit">
+      <label ng-dblclick="editItem(todo)">{{todo.label}}</label>
+      <span class="glyphicon glyphicon-remove pull-right" ng-click="removeItem(todo)"></span>
+    </div>
+    <div ng-if="todo.edit">
+      <form onsubmit="editSave(todo)">
+        <input type="text" ng-if="todo.edit" ng-dblclick="editItem(todo)" ng-model="todo.label" />
+        <span class="glyphicon glyphicon glyphicon-ok pull-right" ng-click="editItem(todo)"></span>
+      </form>
+    </div>
+  </li>
+</ul>
